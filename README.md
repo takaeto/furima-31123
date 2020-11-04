@@ -25,16 +25,16 @@ Things you may want to cover:
 
 ## users table
 
-| Column             | Type   | Options                   |
-|--------------------|--------|---------------------------|
-| nickname           | string | null: false               |
-| email              | string | null: false, unique: true |
-| encrypted_password | string | null: false               |
-| last_name          | string | null: false               |
-| first_name         | string | null: false               |
-| last_name_kana     | string | null: false               |
-| first_name_kana    | string | null: false               |
-| birth_date         | date   | null: false               |
+| Column             | Type   | Options                          |
+|--------------------|--------|----------------------------------|
+| nickname           | string | presence: true                   |
+| email              | string | presence: true, uniqueness: true |
+| encrypted_password | string | presence: true                   |
+| last_name          | string | presence: true                   |
+| first_name         | string | presence: true                   |
+| last_name_kana     | string | presence: true                   |
+| first_name_kana    | string | presence: true                   |
+| birth_date         | date   | presence: true                   |
 
 ### Association
 
@@ -43,17 +43,17 @@ Things you may want to cover:
 
 ## items table
 
-| Column           | Type       | Options                        |
-|------------------|------------|--------------------------------|
-| item_name        | string     | null: false                    |
-| description      | text       | null: false                    |
-| category_id      | integer    | null: false                    |
-| condition_id     | integer    | null: false                    |
-| postage_payer_id | integer    | null: false                    |
-| prefecture_id    | integer    | null: false                    |
-| ship_date_id     | integer    | null: false                    |
-| price            | integer    | null: false                    |
-| user             | references | null: false, foreign_key: true |
+| Column           | Type       | Options                           |
+|------------------|------------|-----------------------------------|
+| item_name        | string     | presence: true                    |
+| description      | text       | presence: true                    |
+| category_id      | integer    | presence: true                    |
+| condition_id     | integer    | presence: true                    |
+| postage_payer_id | integer    | presence: true                    |
+| prefecture_id    | integer    | presence: true                    |
+| ship_date_id     | integer    | presence: true                    |
+| price            | integer    | presence: true                    |
+| user             | references | presence: true, foreign_key: true |
 
 ### Association
 
@@ -62,10 +62,10 @@ Things you may want to cover:
 
 ## purchases table
 
-| Column | Type       | Options                        |
-|--------|------------|--------------------------------|
-| item   | references | null: false, foreign_key: true |
-| user   | references | null: false, foreign_key: true |
+| Column | Type       | Options                           |
+|--------|------------|-----------------------------------|
+| item   | references | presence: true, foreign_key: true |
+| user   | references | presence: true, foreign_key: true |
 
 ### Association
 
@@ -75,15 +75,15 @@ Things you may want to cover:
 
 ## addresses table
 
-| Column        | Type       | Options                        |
-|---------------|------------|--------------------------------|
-| post_code     | string     | null: false                    |
-| prefecture_id | integer    | null: false                    |
-| municipality  | string     | null: false                    |
-| address       | string     | null: false                    |
-| building_name | string     |                                |
-| phone_number  | string     | null: false                    |
-| purchase      | references | null: false, foreign_key: true |
+| Column        | Type       | Options                           |
+|---------------|------------|-----------------------------------|
+| post_code     | string     | presence: true                    |
+| prefecture_id | integer    | presence: true                    |
+| municipality  | string     | presence: true                    |
+| address       | string     | presence: true                    |
+| building_name | string     |                                   |
+| phone_number  | string     | presence: true                    |
+| purchase      | references | presence: true, foreign_key: true |
 
 ### Association
 
