@@ -9,7 +9,7 @@ class Item < ApplicationRecord
 
   has_one_attached :image
 
-  validates :category_id, :condition_id, :postage_payer_id, :prefecture_id, :ship_date_id, numericality: { other_than: 1, message: "can't be blank" } 
+  validates :category_id, :condition_id, :postage_payer_id, :prefecture_id, :ship_date_id, numericality: { other_than: 0, message: "can't be blank" } 
 
   with_options presence: true do
     validates :image
