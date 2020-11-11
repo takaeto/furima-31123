@@ -1,4 +1,3 @@
-console.log("check")
 function display(){
   const priceDisplay = document.getElementById("add-tax-price")
   const priceInput = document.getElementById("item-price")

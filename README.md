@@ -48,7 +48,7 @@ Things you may want to cover:
 | item_name        | string     | presence: true                    |
 | description      | text       | presence: true                    |
 | category_id      | integer    | presence: true                    |
-| condition_id     | integer    | presence: true                    |
+| condition_id     | integer    | preence: true                    |
 | postage_payer_id | integer    | presence: true                    |
 | prefecture_id    | integer    | presence: true                    |
 | ship_date_id     | integer    | presence: true                    |
@@ -79,7 +79,7 @@ Things you may want to cover:
 |---------------|------------|-----------------------------------|
 | post_code     | string     | presence: true                    |
 | prefecture_id | integer    | presence: true                    |
-| municipality  | string     | presence: true                    |
+| city          | string     | presence: true                    |
 | address       | string     | presence: true                    |
 | building_name | string     |                                   |
 | phone_number  | string     | presence: true                    |
