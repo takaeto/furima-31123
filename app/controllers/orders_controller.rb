@@ -30,7 +30,6 @@ class OrdersController < ApplicationController
   end
 
   def pay_item
-
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     Payjp::Charge.create(
       amount: @item.price,
@@ -39,12 +38,7 @@ class OrdersController < ApplicationController
     )
   end
 
-  def item_params
-    params.require(:item).permit(:name, :price, :image).merge(user_id: current_user.id)
-  end
-
   def set_order
     @item = Item.find(params[:item_id])
   end
-
 end
