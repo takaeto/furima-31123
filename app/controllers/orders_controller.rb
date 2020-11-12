@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, only: [:set_cocoa]
+  before_action :authenticate_user!
   before_action :set_order, only: [:index, :create, :set_cocoa, :pay_item]
   before_action :set_cocoa
 
