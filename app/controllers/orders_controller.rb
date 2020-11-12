@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, only: [:set_cocoa]
   before_action :set_order, only: [:index, :create, :set_cocoa, :pay_item]
   before_action :set_cocoa
 
@@ -20,7 +21,7 @@ class OrdersController < ApplicationController
   private
 
   def set_cocoa
-    if user_signed_in? && current_user.id != @item.user_id && @item.purchase != nil
+    if current_user.id == @item.user_id && @item.purchase != nil
       redirect_to root_path
     end
   end
