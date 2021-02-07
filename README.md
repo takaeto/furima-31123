@@ -48,7 +48,7 @@ Things you may want to cover:
 | item_name        | string     | presence: true                    |
 | description      | text       | presence: true                    |
 | category_id      | integer    | presence: true                    |
-| condition_id     | integer    | preence: true                    |
+| condition_id     | integer    | presence: true                    |
 | postage_payer_id | integer    | presence: true                    |
 | prefecture_id    | integer    | presence: true                    |
 | ship_date_id     | integer    | presence: true                    |
